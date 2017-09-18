@@ -74,12 +74,10 @@ def mode_A():
     number = 1
     while True:
         try:
-#            thetime = time.strftime("%d/%m/%Y %H:%M:%S")
-#            payload = struct.pack('19sddii', thetime, temperature, humidity, node, number)
+
             payload = q.get()
             result, mid = client.publish("drone", payload, qos = 2, retain = False)
             print "Publish_return: result =", result, " mid =", mid, "\n"
-#            print "SensorTime:", thetime
 
         except KeyboardInterrupt:
             print("EXIT")
@@ -104,12 +102,10 @@ def mode_B():
 
     while True:
         try:
-#            thetime = time.strftime("%d/%m/%Y %H:%M:%S")
-#            payload = struct.pack('19sddii', thetime, temperature, humidity, node, number)
+
             payload = q.get()
             result, mid = client.publish("drone", payload, qos = 2, retain = False)
             print "Publish_return: result =", result, " mid =", mid, "\n"
-#            print "SensorTime:", thetime
 
         except KeyboardInterrupt:
             print("EXIT")

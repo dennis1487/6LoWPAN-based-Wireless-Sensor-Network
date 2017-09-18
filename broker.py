@@ -6,4 +6,4 @@ s.bind(("", 31500))
 while True:
     data, addr = s.recvfrom(2048)
     print "Received:", data, "from", addr
-    s.sendto("Hi! I am Broker_8.", addr)
+    s.sendto("Hi! I am Broker.", addr)
